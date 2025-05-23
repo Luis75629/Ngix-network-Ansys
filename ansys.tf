@@ -137,7 +137,7 @@ resource "aws_instance" "nginx_1" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.public1.id
   vpc_security_group_ids = [aws_security_group.nginx_sg.id]
-  user_data              = file("./script/install-engix.sh")
+  user_data              = file("./scripts/install-ngix.sh")
   iam_instance_profile   = aws_iam_instance_profile.ssm_profile.name
 
   tags = {
@@ -150,7 +150,7 @@ resource "aws_instance" "nginx_2" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.public2.id
   vpc_security_group_ids = [aws_security_group.nginx_sg.id]
-  user_data              = file("./script/install-engix.sh")
+  user_data              = file("./scripts/install-ngix.sh")
   iam_instance_profile   = aws_iam_instance_profile.ssm_profile.name
 
   tags = {
@@ -163,7 +163,7 @@ resource "aws_instance" "nginx_3" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.public3.id
   vpc_security_group_ids = [aws_security_group.nginx_sg.id]
-  user_data              = file("./script/install-engix.sh")
+  user_data              = file("./scripts/install-ngix.sh")
   iam_instance_profile   = aws_iam_instance_profile.ssm_profile.name
 
   tags = {
