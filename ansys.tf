@@ -186,3 +186,18 @@ resource "aws_iam_instance_profile" "ssm_profile" {
   name = "ssm_instance_profile"
   role = aws_iam_role.ssm_instance_role.name
 }
+
+resource "aws_eip" "nginx_eip_1" {
+  instance = aws_instance.nginx_1.id
+  domain   = "vpc"
+}
+
+resource "aws_eip" "nginx_eip_2" {
+  instance = aws_instance.nginx_2.id
+  domain   = "vpc"
+}
+
+resource "aws_eip" "nginx_eip_3" {
+  instance = aws_instance.nginx_3.id
+  domain   = "vpc"
+}
